@@ -1,1 +1,6 @@
 .idea
+src/node-quickstart.code-workspace
+
+node_modules
+
+.env
