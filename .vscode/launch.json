@@ -5,12 +5,12 @@
             "preLaunchTask": "docker-compose-up-all-detached",
             "type": "node",
             "request": "attach",
-            "name": "Start and attach to docker debugger",
-            "port": 9229,
+            "name": "Main docker-compose (all) - with debugger",
+            "port": 9330,
             "address": "localhost",
             "localRoot": "${workspaceFolder}",
             "remoteRoot": "/node-app",
             "restart": true
-        }
+          }
     ]
 }

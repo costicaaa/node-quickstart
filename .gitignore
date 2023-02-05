@@ -2,5 +2,6 @@
 src/node-quickstart.code-workspace
 
 node_modules
+dev/.env
 
-.env
+coverage
