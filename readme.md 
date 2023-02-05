@@ -5,8 +5,9 @@ Customizable exposed APP_PORT via `.env` file.
 
 # Quick start guide 
 
-## Prereq 
-Node Runtime - This was tested & run using `node v18.2.0`. 
+## Prereq
+Docker
+Docker-compose v15
 
 Run 
 `npm install` 
@@ -18,3 +19,13 @@ Run
 
 ! Mind the `package.json` "dev" command for the port exposed for debugging. 
 While `vscode` is smart enough to automatically detect the port and attach the debugger, JetBrains' "attach to node" debug configuration is not - so you will need to manually configure that.  
+
+
+## Docker Build & Run (Prod)
+docker build --no-cache --build-arg WEB_SERVER_NODE_APP_PORT=<APP_PORT> -t <TAG_NAME> . && docker run -it -p <HOST_PORT>:<APP_PORT> <TAG_NAME>
+
+docker build --no-cache --build-arg WEB_SERVER_NODE_APP_PORT=2323 -t temp_test . && docker run -it -p 3003:2323 temp_test
+
+## Docker Run Dev
+`cd dev`
+`docker-compose up --detach --build --renew-anon-volumes --force-recreate`

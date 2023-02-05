@@ -12,7 +12,7 @@ app.get('/', (req, res) => {
     res.send('Hello World!')
 })
 
-const port = process.env.APP_PORT
+const port = process.env.WEB_SERVER_NODE_APP_PORT
 app.listen(port, () => {
     console.log(`App listening on port ${port}`)
 })

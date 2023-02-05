@@ -1,0 +1,10 @@
+{
+    "version": "2.0.0",
+    "tasks": [
+        {
+            "label": "docker-compose-up-all-detached",
+            "command": "cd ${workspaceFolder}/dev && docker-compose up --detach --build --renew-anon-volumes --force-recreate",
+            "type": "shell"
+        }
+    ]
+}
