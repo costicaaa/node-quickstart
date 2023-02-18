@@ -18,3 +18,12 @@ Run
 
 ! Mind the `package.json` "dev" command for the port exposed for debugging. 
 While `vscode` is smart enough to automatically detect the port and attach the debugger, JetBrains' "attach to node" debug configuration is not - so you will need to manually configure that.  
+
+## Docker Build & Run (Prod)
+docker build --no-cache --build-arg WEB_SERVER_NODE_APP_PORT=<APP_PORT> -t <TAG_NAME> . && docker run -it -p <HOST_PORT>:<APP_PORT> <TAG_NAME>
+
+## Quickstart example: default app port
+docker build --no-cache -t test_bundle . && docker run -it -p 3003:7007 test_bundle
+
+## Override default port example 
+docker build --no-cache --build-arg WEB_SERVER_NODE_APP_PORT=2323 -t test_bundle . && docker run -it -p 3003:2323 test_bundle
