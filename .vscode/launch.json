@@ -1,0 +1,16 @@
+{
+    "version": "0.2.0",
+    "configurations": [
+        {
+            "preLaunchTask": "docker-compose-up-all-detached",
+            "type": "node",
+            "request": "attach",
+            "name": "Main docker-compose (all) - with debugger",
+            "port": 9330,
+            "address": "localhost",
+            "localRoot": "${workspaceFolder}",
+            "remoteRoot": "/node-app",
+            "restart": true
+          }
+    ]
+}

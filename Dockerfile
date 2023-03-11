@@ -17,4 +17,4 @@ COPY src/* ./src/
 
 EXPOSE $WEB_SERVER_NODE_APP_PORT
 
-CMD [ "node", "src/app.js" ]
+CMD [ "npm", "run", "server" ]

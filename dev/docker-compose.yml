@@ -1,0 +1,12 @@
+services: 
+  web-server-node:
+    hostname: web-server-node
+    build: ./../
+    env_file: 
+      - ./.env
+    ports: 
+      - "${WEB_SERVER_NODE_HOST_EXPOSE_PORT}:${WEB_SERVER_NODE_APP_PORT}"
+      - "${WEB_SERVER_NODE_DEBUGGER_HOST_PORT}:9229"
+    command: bash -c "npm install && npm run dev"
+    volumes:
+      - "./../src:/node-app/src"

@@ -1,14 +1,19 @@
 {
   "scripts": {
-    "dev": "nodemon --inspect=9500 ./src/app.js"
+    "dev": "nodemon --inspect=0.0.0.0:9229 ./src/app.js",
+    "all-tests": "NODE_OPTIONS='--experimental-vm-modules --experimental-specifier-resolution=node' jest",
+    "coverage-tests": "NODE_OPTIONS='--experimental-vm-modules --experimental-specifier-resolution=node' jest --collectCoverage",
+    "watch-tests": "NODE_OPTIONS='--inspect=0.0.0.0:9229 --experimental-vm-modules --experimental-specifier-resolution=node' jest --watchAll --runInBand",
+    "server": "node ./src/app.js"
   },
   "dependencies": {
     "cors": "^2.8.5",
     "dotenv": "^16.0.3",
     "express": "^4.18.2"
   },
+  "type": "module",
   "devDependencies": {
+    "jest": "^29.4.1",
     "nodemon": "^2.0.20"
-  },
-  "type": "module"
+  }
 }
